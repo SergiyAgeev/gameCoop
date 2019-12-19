@@ -63,6 +63,18 @@ namespace game_coop
         {
            
         }
+
+        public bool boolCheck(int x, int y, int Y, int X)
+        {
+            if (x == X && y == Y)
+            {
+                Console.Clear();
+                Console.WriteLine("OMG YOU WIN 1 000 000 000 $");
+                return false;
+            }
+
+           return true;
+        }
         
         
 

@@ -18,17 +18,18 @@ namespace game_coop
             field.fillField(Xx, Yy, x, y);
             makeFiedl[robot.CoordinateX, robot.CoordinateY] = inputOutput.robotModel;
             inputOutput.printField(makeFiedl);
-
+            bool triger = true;
 
             do
             {
                 String cursour = (Console.ReadLine());
                 switch (cursour)
                 {
+                       
                     //move bot
                     case "s":
-                        robot.pushbutton += (robot.moveRight);
-                        Console.Clear();
+                        robot.pushbutton += (robot.moveBottom);
+                        
                         do
                         {
                             Console.Clear();
@@ -36,13 +37,14 @@ namespace game_coop
                             makeFiedl[++x, y] = inputOutput.robotModel;
                             robot.DoEvent();
                             inputOutput.printField(makeFiedl);
+                            triger =  robot.boolCheck(x, y, Yy, Xx);
                         } while (Console.ReadKey(true).KeyChar == 's');
 
                         break;
                     //move top
                     case "w":
                         robot.pushbutton += (robot.moveTop);
-                        Console.Clear();
+                        
                         do
                         {
                             Console.Clear();
@@ -50,13 +52,15 @@ namespace game_coop
                             makeFiedl[--x, y] = inputOutput.robotModel;
                             robot.DoEvent();
                             inputOutput.printField(makeFiedl);
+                            triger =  robot.boolCheck(x, y, Yy, Xx);
                         } while (Console.ReadKey(true).KeyChar == 'w');
 
+                       
                         break;
                     //move right
                     case "d":
                         robot.pushbutton += (robot.moveRight);
-                        Console.Clear();
+                        
                         do
                         {
                             Console.Clear();
@@ -64,13 +68,15 @@ namespace game_coop
                             makeFiedl[x, ++y] = inputOutput.robotModel;
                             robot.DoEvent();
                             inputOutput.printField(makeFiedl);
+                            triger =  robot.boolCheck(x, y, Yy, Xx);
                         } while (Console.ReadKey(true).KeyChar == 'd');
 
+                        robot.boolCheck(x, y, Yy, Xx);
                         break;
                     //move left
                     case "a":
                         robot.pushbutton += (robot.moveLeft);
-                        Console.Clear();
+                        
                         do
                         {
                             Console.Clear();
@@ -78,12 +84,17 @@ namespace game_coop
                             makeFiedl[x, --y] = inputOutput.robotModel;
                             robot.DoEvent();
                             inputOutput.printField(makeFiedl);
+                            triger =  robot.boolCheck(x, y, Yy, Xx);
                         } while (Console.ReadKey(true).KeyChar == 'a');
+                       
                         break;
                     default:
                         break;
+                    
                 }
-            } while ((robot.CoordinateX != Xx && robot.CoordinateY != Yy));
+            } while (triger != false);
+
+            
         }
     }
 }
