@@ -37,11 +37,7 @@ namespace game_coop
                 pushbutton();
         }
 
-        public void moveRobot()
-        {
-            Console.WriteLine("robot moved ");
-        }
-
+        
 //        public void moveRobot(Robot robot, int toX, int toY)
 //        {
 //            

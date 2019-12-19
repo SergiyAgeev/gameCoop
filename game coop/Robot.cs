@@ -4,6 +4,7 @@ namespace game_coop
 {
     public class Robot
     {
+        public delegate void PushButton();
         private Direction direction;
         private int coordinateX;
         private int coordinateY;
@@ -13,6 +14,15 @@ namespace game_coop
             this.direction = direction;
             this.coordinateX = coordinateX;
             this.coordinateY = coordinateY;
+        }
+        
+        
+
+        public event PushButton pushbutton;
+        public void DoEvent()
+        {
+            if (pushbutton != null)
+                pushbutton();
         }
 
         public Direction Direction
@@ -35,8 +45,8 @@ namespace game_coop
 
         public void moveRight()
         {
-          
             
+
         }
         public void moveTop()
         {
@@ -53,6 +63,15 @@ namespace game_coop
         {
             CoordinateY--;
         }
+        public void moveBot(String[,] field,int x, int y)
+        {
+            Console.Clear();
+            field[x, y] = inputOutput.brickModel;
+            field[++x, y] = inputOutput.robotModel;
+            inputOutput.printField(field);
+        }
+
+        
         
         public void turnLeft() {
             switch (direction) {
