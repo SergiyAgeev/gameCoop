@@ -17,10 +17,14 @@ namespace game_coop
 
             string[,] makeFiedl = field.Field;
             field.fillField(Xx, Yy, x, y);
+            if (Xx == x && Yy ==y)
+            {
+                Environment.Exit(0);
+            }
             makeFiedl[robot.CoordinateX, robot.CoordinateY] = inputOutput.robotModel;
             inputOutput.printField(makeFiedl);
             bool triger = true;
-
+         
             do
             {
                 String cursour = (Console.ReadLine());
