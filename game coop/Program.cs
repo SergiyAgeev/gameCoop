@@ -12,7 +12,7 @@ namespace game_coop
             int x = inputOutput.readXcoordinate();
             int y = inputOutput.readYcoordinate();
             GameField field = new GameField();
-            Robot robot = new Robot(Direction.UP, x, y);
+            Robot robot = new Robot( x, y);
 
 
             string[,] makeFiedl = field.Field;

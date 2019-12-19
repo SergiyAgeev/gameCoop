@@ -7,13 +7,13 @@ namespace game_coop
     {
         public delegate void PushButton();
 
-        private Direction direction;
+        
         private int coordinateX;
         private int coordinateY;
 
-        public Robot(Direction direction, int coordinateX, int coordinateY)
+        public Robot( int coordinateX, int coordinateY)
         {
-            this.direction = direction;
+            
             this.coordinateX = coordinateX;
             this.coordinateY = coordinateY;
         }
@@ -27,11 +27,7 @@ namespace game_coop
                 pushbutton();
         }
 
-        public Direction Direction
-        {
-            get => direction;
-            set => direction = value;
-        }
+      
 
         public int CoordinateX
         {
