@@ -50,26 +50,21 @@ namespace game_coop
         }
         public void moveTop()
         {
-            CoordinateY++;
+           
             
         }
 
         public void moveLeft()
         {
-            CoordinateX--;
+            
         }
 
         public void moveBottom()
         {
-            CoordinateY--;
+           
         }
-        public void moveBot(String[,] field,int x, int y)
-        {
-            Console.Clear();
-            field[x, y] = inputOutput.brickModel;
-            field[++x, y] = inputOutput.robotModel;
-            inputOutput.printField(field);
-        }
+        
+        
 
         
         
