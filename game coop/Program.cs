@@ -25,21 +25,33 @@ namespace game_coop
                 int cursour =Convert.ToInt32(Console.ReadLine());
                 switch (cursour)
                 {
-                    //move right
+                    //move bot
                     case 1:
                         Console.Clear();
                         makeFiedl[x, y] = temp;
                         makeFiedl[++x, y] = "[.>▀<]";
                         inputOutput.printField(makeFiedl);
                         break;
+                    //move top
                     case 2:
-                        robot.moveTop();
+                        Console.Clear();
+                        makeFiedl[x, y] = temp;
+                        makeFiedl[--x, y] = "[.>▀<]";
+                        inputOutput.printField(makeFiedl);
                         break;
+                    //move right
                     case 3:
-                        robot.moveBottom();
+                        Console.Clear();
+                        makeFiedl[x, y] = temp;
+                        makeFiedl[x, ++y] = "[.>▀<]";
+                        inputOutput.printField(makeFiedl);
                         break;
-                    case 4:
-                        robot.moveLeft();
+                    //move left
+                    case 4: 
+                        Console.Clear();
+                        makeFiedl[x, y] = temp;
+                        makeFiedl[x, --y] = "[.>▀<]";
+                        inputOutput.printField(makeFiedl);
                         break;
                     default:
                         triger = false;
