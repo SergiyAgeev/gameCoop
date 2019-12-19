@@ -6,6 +6,7 @@ namespace game_coop
     {
         public static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             int Xx = inputOutput.RandomNumber();
             int Yy = inputOutput.RandomNumber();
             int x = inputOutput.readXcoordinate();
@@ -25,76 +26,111 @@ namespace game_coop
                 String cursour = (Console.ReadLine());
                 switch (cursour)
                 {
-                       
                     //move bot
                     case "s":
-                        robot.pushbutton += (robot.moveBottom);
-                        
-                        do
+                        try
                         {
-                            Console.Clear();
-                            makeFiedl[x, y] = inputOutput.brickModel;
-                            makeFiedl[++x, y] = inputOutput.robotModel;
-                            robot.DoEvent();
-                            inputOutput.printField(makeFiedl);
-                            triger =  robot.boolCheck(x, y, Yy, Xx);
-                        } while (Console.ReadKey(true).KeyChar == 's');
+                            robot.pushbutton += (robot.moveBottom);
+                            do
+                            {
+                                Console.Clear();
+                                makeFiedl[x, y] = inputOutput.brickModel;
+                                makeFiedl[++x, y] = inputOutput.robotModel;
+                                robot.DoEvent();
+                                inputOutput.printField(makeFiedl);
+                                triger = robot.boolCheck(x, y, Yy, Xx);
+                            } while (Console.ReadKey(true).KeyChar == 's');
+                        }
+                        catch (IndexOutOfRangeException)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("GAME OVER!\nYOUR ROBOT CRASHED!\nPRESS ANY KEY FOR EXIT");
+                            Console.ReadLine();
+                            triger = false;
+                        }
 
+                        robot.boolCheck(x, y, Yy, Xx);
                         break;
                     //move top
                     case "w":
-                        robot.pushbutton += (robot.moveTop);
-                        
-                        do
+                        try
                         {
-                            Console.Clear();
-                            makeFiedl[x, y] = inputOutput.brickModel;
-                            makeFiedl[--x, y] = inputOutput.robotModel;
-                            robot.DoEvent();
-                            inputOutput.printField(makeFiedl);
-                            triger =  robot.boolCheck(x, y, Yy, Xx);
-                        } while (Console.ReadKey(true).KeyChar == 'w');
+                            robot.pushbutton += (robot.moveTop);
+                            do
+                            {
+                                Console.Clear();
+                                makeFiedl[x, y] = inputOutput.brickModel;
+                                makeFiedl[--x, y] = inputOutput.robotModel;
+                                robot.DoEvent();
+                                inputOutput.printField(makeFiedl);
+                                triger = robot.boolCheck(x, y, Yy, Xx);
+                            } while (Console.ReadKey(true).KeyChar == 'w');
+                        }
+                        catch (IndexOutOfRangeException)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("GAME OVER!\nYOUR ROBOT CRASHED!\nPRESS ANY KEY FOR EXIT");
+                            Console.ReadLine();
+                            triger = false;
+                        }
 
-                       
+                        robot.boolCheck(x, y, Yy, Xx);
                         break;
                     //move right
                     case "d":
-                        robot.pushbutton += (robot.moveRight);
-                        
-                        do
+                        try
                         {
-                            Console.Clear();
-                            makeFiedl[x, y] = inputOutput.brickModel;
-                            makeFiedl[x, ++y] = inputOutput.robotModel;
-                            robot.DoEvent();
-                            inputOutput.printField(makeFiedl);
-                            triger =  robot.boolCheck(x, y, Yy, Xx);
-                        } while (Console.ReadKey(true).KeyChar == 'd');
+                            robot.pushbutton += (robot.moveRight);
+                            do
+                            {
+                                Console.Clear();
+                                makeFiedl[x, y] = inputOutput.brickModel;
+                                makeFiedl[x, ++y] = inputOutput.robotModel;
+                                robot.DoEvent();
+                                inputOutput.printField(makeFiedl);
+                                triger = robot.boolCheck(x, y, Yy, Xx);
+                            } while (Console.ReadKey(true).KeyChar == 'd');
+                        }
+                        catch (IndexOutOfRangeException)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("GAME OVER!\nYOUR ROBOT CRASHED!\nPRESS ANY KEY FOR EXIT");
+                            Console.ReadLine();
+                            triger = false;
+                        }
 
                         robot.boolCheck(x, y, Yy, Xx);
                         break;
                     //move left
                     case "a":
-                        robot.pushbutton += (robot.moveLeft);
-                        
-                        do
+                        try
                         {
-                            Console.Clear();
-                            makeFiedl[x, y] = inputOutput.brickModel;
-                            makeFiedl[x, --y] = inputOutput.robotModel;
-                            robot.DoEvent();
-                            inputOutput.printField(makeFiedl);
-                            triger =  robot.boolCheck(x, y, Yy, Xx);
-                        } while (Console.ReadKey(true).KeyChar == 'a');
-                       
+                            robot.pushbutton += (robot.moveLeft);
+                            do
+                            {
+                                Console.Clear();
+                                makeFiedl[x, y] = inputOutput.brickModel;
+                                makeFiedl[x, --y] = inputOutput.robotModel;
+                                robot.DoEvent();
+                                inputOutput.printField(makeFiedl);
+                                triger = robot.boolCheck(x, y, Yy, Xx);
+                            } while (Console.ReadKey(true).KeyChar == 'a');
+                        }
+                        catch (IndexOutOfRangeException)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("GAME OVER!\nYOUR ROBOT CRASHED!\nPRESS ANY KEY FOR EXIT");
+                            Console.ReadLine();
+                            triger = false;
+                        }
+
+                        robot.boolCheck(x, y, Yy, Xx);
+
                         break;
                     default:
                         break;
-                    
                 }
             } while (triger != false);
-
-            
         }
     }
 }
