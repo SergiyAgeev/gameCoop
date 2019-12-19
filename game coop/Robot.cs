@@ -32,7 +32,27 @@ namespace game_coop
             get => coordinateY;
             set => coordinateY = value;
         }
-       
+
+        public void moveRight()
+        {
+          
+            
+        }
+        public void moveTop()
+        {
+            CoordinateY++;
+            
+        }
+
+        public void moveLeft()
+        {
+            CoordinateX--;
+        }
+
+        public void moveBottom()
+        {
+            CoordinateY--;
+        }
         
         public void turnLeft() {
             switch (direction) {
