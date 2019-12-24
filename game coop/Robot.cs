@@ -27,8 +27,6 @@ namespace game_coop
                 pushbutton();
         }
 
-
-
         public int CoordinateX
         {
             get => coordinateX;
