@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Drawing;
+using System.Runtime.Serialization;
+
 
 namespace game_coop
 {
@@ -12,21 +15,19 @@ namespace game_coop
             set => field = value;
         }
 
-
-        public void fillField(int a,int b,int aa, int bb)
+        public void fillField(int a, int b, int aa, int bb)
         {
+            
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 10; j++)
                 {
                     field[i, j] = "[    ]";
-                    
                 }
             }
-           
+          
             field[a, b] = "[O═╦╗]";
         }
-
         public delegate void PushButton();
 
         public event PushButton pushbutton;
