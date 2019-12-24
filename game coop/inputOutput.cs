@@ -7,7 +7,6 @@ namespace game_coop
 {
     public static class inputOutput
     {
-
         public static String brickModel = "[    ]";
         public static String robotModel = "[.>▀<]";
 

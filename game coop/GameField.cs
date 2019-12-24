@@ -15,7 +15,6 @@ namespace game_coop
             set => field = value;
         }
 
-
         public void fillField(int a, int b, int aa, int bb)
         {
             
@@ -24,16 +23,11 @@ namespace game_coop
                 for (int j = 0; j < 10; j++)
                 {
                     field[i, j] = "[    ]";
-                    
-
                 }
             }
           
             field[a, b] = "[O═╦╗]";
         }
-        
-        
-
         public delegate void PushButton();
 
         public event PushButton pushbutton;

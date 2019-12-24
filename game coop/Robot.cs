@@ -7,17 +7,14 @@ namespace game_coop
     {
         public delegate void PushButton();
 
-
         private int coordinateX;
         private int coordinateY;
 
         public Robot(int coordinateX, int coordinateY)
         {
-
             this.coordinateX = coordinateX;
             this.coordinateY = coordinateY;
         }
-
 
         public event PushButton pushbutton;
 
@@ -41,7 +38,6 @@ namespace game_coop
 
         public void moveRight()
         {
-            
         }
 
         public void moveTop()
@@ -55,7 +51,5 @@ namespace game_coop
         public void moveBottom()
         {
         }
-
-       
     }
 }

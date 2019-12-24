@@ -6,7 +6,6 @@ namespace game_coop
     {
         public static void Main(string[] args)
         {
-            
             Console.ForegroundColor = ConsoleColor.Yellow;
             int Xx = inputOutput.RandomNumber();
             int Yy = inputOutput.RandomNumber();
